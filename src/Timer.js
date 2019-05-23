@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import './Timer.css';
 
 class Timer extends Component {
 
   render() {
     return (
       <div>
-        <h1>Bacon Timer</h1>
-        <h3>
+        <img src="./bacon.jpg'"></img><h1>{this.props.name}</h1>
+        <h3 className={this.props.count <= 0 ? "red" : ""}>
           {Math.floor((this.props.count/(1000 * 60)))%60}:{Math.floor((this.props.count/1000))%60}
         </h3>
         <button onClick={this.props.startStop}>
